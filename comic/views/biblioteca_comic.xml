@@ -38,7 +38,7 @@
                         <field name="estado"/>
                         <field name="paginas"/>
                         <field name="activo" readonly="1"/>
-                        <field name="leido"/>
+                        <field name="leido"/>             
                     </group>
                     <group>
                         <field name="precio"/>
@@ -67,7 +67,7 @@
             <tree>
                 <field name="nombre"/>
                 <field name="fecha_publicacion"/>                        
-                <field name="estado"/>
+                <field name="estado"/>               
             </tree>
         </field>
     </record>
