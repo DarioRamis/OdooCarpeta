@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Definimos como mostramos la vista en el modelo -->
+    <record id='hospital_diagnostico_action' model='ir.actions.act_window'>
+        <field name="name">Diagnóstico</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">diagnosticos</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Simple menu item, sin más utilidad que la didáctica -->       
+    <menuitem name="Diagnosticos" id="diagnostico_menu" parent="hospital_base_menu" action="hospital_diagnostico_action"/>
+
+    <!-- Definición de la Vista formulario -->
+    <record id="hospital_diagnostico_view_form" model="ir.ui.view">
+        <field name="name">Formulario de Diagnósticos</field>
+        <field name="model">diagnosticos</field>
+        <field name="arch" type="xml">
+            <form>               
+                <group>                   
+                    <field name="medico"/>
+                    <field name="paciente"/> 
+                    <field name="diagnostico"/>   
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definición de la vista Tree -->
+    <record id="hospital_diagnostico_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Diagnósticos</field>
+        <field name="model">diagnosticos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="medico"/>                 
+                <field name="paciente"/> 
+                <field name="diagnostico"/>                          
+            </tree>
+        </field>
+    </record>
+</odoo>
