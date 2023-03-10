@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Definimos como mostramos la vista en el modelo -->
+    <record id='instituto_ciclo_formativo_action' model='ir.actions.act_window'>
+        <field name="name">Ciclos Formativos</field>
+        <!-- Indicamos a que modelo aplica -->
+        <field name="res_model">ciclos</field>
+        <!-- Indicamos que los comics pueden verse en tree para el listado,
+            y en form para la creación/edición -->
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Simple menu item, sin más utilidad que la didáctica -->    
+    <menuitem name="Instituto" id="instituto_base_menu" />
+    <menuitem name="Ciclos Formativos" id="ciclos_formativos_menu" parent="instituto_base_menu" action="instituto_ciclo_formativo_action"/>
+
+    <!-- Definición de la Vista formulario -->
+    <record id="instituto_ciclo_formativo_view_form" model="ir.ui.view">
+        <field name="name">Formulario de Ciclos Formativos</field>
+        <field name="model">ciclos</field>
+        <field name="arch" type="xml">
+            <form>               
+                <group>                   
+                    <field name="nombre"/>
+                    <field name="descripcion"/> 
+                    <field name="modulosVarios"/>   
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Definición de la vista Tree -->
+    <record id="instituto_ciclo_formativo_view_tree" model="ir.ui.view">
+        <field name="name">Lista de Ciclos Formativos</field>
+        <field name="model">ciclos</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nombre"/>                 
+                <field name="descripcion"/>  
+                <field name="modulosVarios"/>                           
+            </tree>
+        </field>
+    </record>
+</odoo>
